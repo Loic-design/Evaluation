@@ -18,43 +18,40 @@ a{
     text-decoration: none;
 }
 
+nav{
+    height: 100px;
+    margin-bottom: 70px;
+}
+
 .nav-deskop{
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    gap:30px;
     display: none;
 }
-
-nav a{
-    color: #fff;
-}
-
-.logo{
-    width: 100px;
-    padding-right: 30px;
-}
-
-
 .nav-mobile{
     position: fixed;
+    top:0;
     width: 100%;
     background-image: url(/Image/bg_pattern.png);
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
 }
 
-svg{
-    fill: #fff;
+img[alt="Sezane-deskop"]{
+    width: 150px;
+    padding-right: 30px;
 }
+
+nav a{
+    color: #000;
+}
+
+
 
 img[alt="Sezane-mobile"]{
     width: 100px;
     margin: 0 auto;
-    padding-top: 15px;
+    max-height: 100%;
 }
 
 .burger{
@@ -79,36 +76,34 @@ img[alt="Sezane-mobile"]{
 }
 
 .grid-container{
-    /* padding-top: 30px; */
     display: grid;
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(6,1fr);
+    gap: 30px;
 }
-
 
 a img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    aspect-ratio: 3/4;
+}
+
+h1{
+    text-align: center;
+    padding-top: 10px;
 }
 
 .card{
-    position: relative;
-    grid-column: span 6;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-column: span 3;
 }
 
-.full-card{
-    grid-column: span 12;
-}
-
-h2{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-
-.card a{
-    color: #fff;
+.big-card{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-column: span 3;
 }
 
 .lookboot{
@@ -160,8 +155,8 @@ img[alt="lookboot"]{
 }
 
 .grid-container-footer{
-    padding: 2rem;
     display: grid;
+    padding: 2rem;
     grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
 }
 
@@ -182,7 +177,6 @@ button{
     background-color: #000;
     color: #fff;
 }
-
 
 .icons{
     display: flex;
@@ -207,46 +201,40 @@ button{
 .icons a:nth-child(6):hover{
     color: rgb(128, 0, 0);
 }
-
-
-
-@media screen and (min-width:770px) {
-    .card{
-        grid-column: span 3;
-    }
-    .full-card{
-        grid-column: span 4;
+@media screen and (min-width: 1064px) {
+    .container{
+        width: 1300px;
+        margin: 0 auto;
     }
     .nav-mobile{
-        display: none;
-    }
-    .nav-mobile770px{
-    width: 100%;
-    background-image: url(/Image/bg_pattern.png);
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-}
-@media screen and (min-width:1024px) {
-    .nav-mobile{
-        display: none;
-    }
-    .burger{
-        display: none;
-    }
-    .nav-mobile770px{
         display: none;
     }
     .nav-deskop{
     width: 100%;
-    margin: 20px auto;
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-content: center;
-    gap:30px;
-    position: absolute;
-    z-index: 1;
+    gap: 15px;
+    margin-bottom: 0;
+    
     }
+    .burger{
+        display: none;
+    }
+    .wrapper{
+        width: 1300px;
+        margin: 0 auto;
+    }
+    
+}
+@media screen and (min-width: 770px) {
+        .grid-container{
+            grid-template-columns: repeat(4,1fr);
+        }
+        .big-card{
+            grid-column: span 2;
+        }
+        .card{
+            grid-column: span 1;
+        }
 }
