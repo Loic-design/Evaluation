@@ -6,9 +6,222 @@ box-sizing: border-box;
 
 body{
     margin: 0;
+    position: relative;
 }
 
 img {
     display: block;
     max-width:100%;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-deskop{
+    margin: 0 auto;
+    width: 1300px;
+    display: flex;
+    justify-content: center;
+    gap:30px;
+    display: none;
+}
+
+.logo{
+    width: 100px;
+    padding-right: 30px;
+}
+
+
+.nav-mobile{
+    background-image: url(/Image/bg_pattern.png);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+svg{
+    fill: #fff;
+}
+
+img[alt="Sezane-mobile"]{
+    width: 100px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+.burger{
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    left: 15px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    z-index: 1;
+}
+
+.burger div{
+    width: 70%;
+    height: 3px;
+    background-color:#000;
+    border-radius:10px;
+}
+
+.grid-container{
+    /* padding-top: 30px; */
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+
+a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card{
+    position: relative;
+    grid-column: span 6;
+}
+
+.full-card{
+    grid-column: span 12;
+}
+
+h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.lookboot{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lookboot::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.397);
+}
+
+img[alt="lookboot"]{
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+}
+
+.txt-btn{
+    position: absolute;
+    text-align: center;
+    color: #fff;
+}
+
+.txt-btn a{
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 15px 20px;
+    transition: 1s all ease-in-out;
+}
+
+.txt-btn a:hover{
+    transform: scale(1.2);
+    color: #ffffffd0;
+    width: 70%;
+}
+
+.wrapper{
+    padding: 30px;
+    margin-bottom: 50px;
+    padding: 0 2rem;
+}
+
+.grid-container-footer{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input{
+    width: 200px;
+    height: 30px;
+    padding: 20px;
+}
+
+button{
+    height: 30px;
+    background-color: #000;
+    color: #fff;
+}
+
+
+.icons{
+    display: flex;
+    gap: 15px;
+}
+
+.icons a:nth-child(1):hover{
+    color: orange;
+}
+.icons :nth-child(2):hover{
+    color: red;
+}
+.icons :nth-child(3):hover{
+    color: blue;
+}
+.icons :nth-child(4):hover{
+    color: yellow;
+}
+.icons :nth-child(5):hover{
+    color: rgb(0, 128, 28);
+}
+.icons :nth-child(6):hover{
+    color: rgb(128, 0, 0);
+}
+
+
+
+@media screen and (min-width:770px) {
+    .card{
+        grid-column: span 3;
+    }
+    .full-card{
+        grid-column: span 4;
+    }
+}
+@media screen and (min-width:1024px) {
+    .nav-mobile{
+        display: none;
+    }
+    .burger{
+        display: none;
+    }
+    .nav-deskop{
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap:30px;
+    position: absolute;
+    z-index: 1;
+}
 }
